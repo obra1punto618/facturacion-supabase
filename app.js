@@ -15,34 +15,34 @@ document.getElementById("facturaForm").addEventListener("submit", async (e) => {
     return;
   }
 
-  // ----------------------------
-  // 1. SUBIR ARCHIVO A STORAGE
-  // ----------------------------
+  // ------------------------------------------------
+  // 1. SUBIR ARCHIVO A STORAGE (BUCKET FACTURACION)
+  // ------------------------------------------------
   const safeName = facturaFile.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
-  const filePath = `FACTURAS/${Date.now()}_${safeName}`;
+  const filePath = `facturas/${Date.now()}_${safeName}`;
 
   let { data: fileData, error: fileError } = await supabaseClient.storage
-    .from("FACTURAS") // nombre EXACTO del bucket
+    .from("FACTURACION")   // NOMBRE EXACTO DEL BUCKET
     .upload(filePath, facturaFile);
 
   if (fileError) {
     console.error(fileError);
-    alert("❌ Error subiendo el archivo a Supabase Storage");
+    alert("❌ Error subiendo el archivo al Storage");
     return;
   }
 
-  // ----------------------------
-  // 2. GUARDAR REGISTRO EN TABLA
-  // ----------------------------
+  // ------------------------------------------------
+  // 2. REGISTRO EN LA TABLA facturas
+  // ------------------------------------------------
   const { data, error } = await supabaseClient
     .from("facturas")
     .insert([
       {
         obra: obra,
         partida: partida,
-        monto: 0,                // o pon null si prefieres
+        monto: 0,
         estado: "Pendiente",
-        factura_url: fileData.path,
+        factura_url: fileData.path,  // columna correcta
         abono_url: null,
         usuario: "web",
         fecha: new Date().toISOString()
