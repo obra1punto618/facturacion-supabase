@@ -1,53 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 20px;
 }
 
-h1, h2 {
-    text-align: center;
+.container {
+  background: white;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px #ccc;
 }
 
-.form-box {
-    max-width: 450px;
-    background: white;
-    padding: 25px;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-}
-
-label {
-    margin-top: 10px;
-    display: block;
+h2 {
+  text-align: center;
 }
 
 input, select {
-    width: 100%;
-    margin-top: 5px;
-    padding: 8px;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px;
-    width: 100%;
-    background: #1a73e8;
-    color: white;
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
+  background: #4CAF50;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #0f5ac6;
-}
-
-.factura-card {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px #ccc;
-    margin-top: 15px;
+  background: #45a049;
 }
