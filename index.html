@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Control de Facturas</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- SDK de Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-  <!-- Archivo de lógica -->
-  <script src="app.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Registro de Facturas</title>
 </head>
 <body>
-
-  <div class="container">
-    <h2>Subir Factura</h2>
+    <h1>Registrar Factura</h1>
 
     <form id="facturaForm">
-      <label>Obra:</label>
-      <input type="text" id="obra" required>
+        <label>Obra:</label>
+        <input type="text" id="obra" required>
 
-      <label>Partida:</label>
-      <select id="partida" required>
-        <option value="">Seleccionar</option>
-        <option value="Electricidad">Electricidad</option>
-        <option value="Pintura">Pintura</option>
-        <option value="Obra Civil">Obra Civil</option>
-        <option value="Carpintería Metálica">Carpintería Metálica</option>
-        <option value="ACCI">ACCI</option>
-        <option value="Publicidad">Publicidad</option>
-      </select>
+        <label>Partida:</label>
+        <input type="text" id="partida" required>
 
-      <label>Archivo de la factura (imagen o PDF):</label>
-      <input type="file" id="factura" accept="image/*,application/pdf" required>
+        <label>Subir Factura (PDF o Imagen):</label>
+        <input type="file" id="archivo" accept="application/pdf,image/*" required>
 
-      <button type="submit">Subir</button>
+        <button type="submit">Registrar</button>
     </form>
-  </div>
 
+    <script src="app.js"></script>
 </body>
 </html>
